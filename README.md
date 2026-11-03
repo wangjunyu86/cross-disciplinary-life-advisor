@@ -62,10 +62,13 @@ Skill 默认按照以下结构回答：
     ├── cognition-and-social.md
     ├── uncertainty-and-economy.md
     ├── philosophy-finance-body.md
-    ├── integration.md
-    └── coverage-notes.md
+    └── integration.md
 ```
 
 ## 内容说明
 
-仓库内容是面向实际决策的原创操作化整理，不是课程逐字稿，也不应被当作任何讲师的原话。投资、医疗和法律相关内容仅用于一般决策支持，不能替代持证专业人士的个性化建议。
+仓库内容是面向实际决策的原创操作化整理，不是任何课程、书籍或讲师内容的逐字转载。投资、医疗和法律相关内容仅用于一般决策支持，不能替代持证专业人士的个性化建议。
+
+## 开源许可
+
+本项目采用 [MIT License](LICENSE)，可以免费使用、修改和分发。
