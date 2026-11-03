@@ -1,0 +1,4 @@
+interface:
+  display_name: "跨学科生活顾问"
+  short_description: "用跨学科思维模型把现实问题转化为可执行、可复盘的行动方案"
+  default_prompt: "使用 $cross-disciplinary-life-advisor 分析我的现实问题，选择少量真正相关的模型，并给出有边界、可衡量、可调整的行动方案。"
