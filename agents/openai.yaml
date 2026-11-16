@@ -1,4 +1,7 @@
 interface:
-  display_name: "跨学科生活顾问"
-  short_description: "用跨学科思维模型把现实问题转化为可执行、可复盘的行动方案"
-  default_prompt: "使用 $cross-disciplinary-life-advisor 分析我的现实问题，选择少量真正相关的模型，并给出有边界、可衡量、可调整的行动方案。"
+  display_name: "Decision-to-Action Advisor"
+  short_description: "Turn hard life choices into bounded tests and clear actions"
+  icon_small: "./assets/icon.png"
+  icon_large: "./assets/social-preview.png"
+  brand_color: "#48D3B1"
+  default_prompt: "Use $cross-disciplinary-life-advisor to clarify my decision, select only the models that change it, and produce a reversible action plan with metrics, a review date, and stop conditions."

@@ -1,23 +1,26 @@
 ---
 name: cross-disciplinary-life-advisor
-description: Use cross-disciplinary mental models to turn everyday questions about learning, work, relationships, money, health habits, self-management, and complex choices into bounded, testable action plans. Use when the user wants practical life advice or a structured decision rather than subject-matter trivia.
+description: Turn difficult choices about careers, stalled projects, habits, relationships, money, learning, and competing options into bounded, testable action plans. Use when the user needs a structured real-life decision with a first action, progress metrics, a review date, and stop conditions rather than generic encouragement or subject-matter trivia.
+metadata:
+  short-description: Turn hard life choices into actions you can start today
 ---
-
 # Cross-Disciplinary Life Advisor
 
-Turn the user's real situation into an actionable plan using the smallest useful set of models from the reference library.
+Turn the user's real situation into an actionable plan using the smallest useful set of models from the reference library. Respond in the user's language unless they request another language.
 
 ## Workflow
 
 1. Restate the decision or problem in one sentence. Separate observed facts, the user's interpretation, constraints, and the outcome they want. Ask a question only when a missing fact would materially change the recommendation; otherwise state a reasonable assumption and proceed.
-2. Route to the relevant reference file:
+2. Route to the smallest relevant reference set:
+   - career decisions, sunk-cost reviews, habit design, difficult conversations, or multi-option choices: start with `references/high-intent-scenarios.md`
    - systems, engineering, functions, brain science, complexity: `references/systems-and-complexity.md`
    - cognition, social networks, finance, psychology, communication: `references/cognition-and-social.md`
    - probability, economics, anthropology, information, marketing, history: `references/uncertainty-and-economy.md`
    - philosophy, accounting, investment, physiology, self-management: `references/philosophy-finance-body.md`
    - integrating models in the real world: `references/integration.md`
    - quick discovery by model or problem type: `references/model-index.md`
-   - reusable step-by-step interventions: `references/action-playbooks.md`
+   - broader reusable interventions: `references/action-playbooks.md`
+   Read only the files needed for the current decision; do not load the entire library by default.
 3. Select 2–4 models that change the decision. Prefer models that explain different layers of the problem; do not decorate an answer with unrelated concepts.
 4. For each selected model, explain in plain language:
    - the observable signal that makes it relevant;

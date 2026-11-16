@@ -1,74 +1,117 @@
 # Cross-Disciplinary Life Advisor
 
-一个面向 Codex / AI Agent 的跨学科生活决策 Skill。它会把学习、工作、关系、金钱、健康习惯、自我管理和复杂选择，转化为有边界、可验证、可复盘的行动方案。
+[简体中文](README.zh-CN.md) · [Examples](examples/README.md) · [Evaluation](evals/README.md) · [Roadmap](ROADMAP.md)
 
-## 能做什么
+![Cross-Disciplinary Life Advisor](assets/social-preview.png)
 
-- 区分事实、解释、约束和目标
-- 从系统论、认知心理学、概率统计、经济学、金融学、哲学、生理学等领域选择真正相关的模型
-- 分析因果机制、机会成本、风险与第二阶影响
-- 优先设计低成本、可逆的小实验
-- 设置进度指标、复盘节奏以及停止或调整条件
+**Turn difficult life decisions into actions you can start today.**
 
-## 适用场景
+A practical Agent Skill for Codex and compatible AI agents. It helps people decide whether to change jobs, continue a stalled project, compare important options, build a sustainable habit, or prepare for a difficult conversation—then converts the decision into a bounded experiment with evidence, metrics, and exit conditions.
 
-- 职业选择、转行与换城市
-- 学习规划与习惯养成
-- 人际关系与沟通
-- 消费、储蓄和投资决策支持
-- 压力、情绪与健康生活管理
-- 多目标冲突和高不确定性选择
+## Why use it?
 
-## 安装
+General advice often sounds reasonable but leaves the next move unclear. This skill forces a decision-quality workflow:
 
-### Codex
+- separates observations, interpretations, constraints, and goals;
+- selects only 2–4 models that can materially change the decision;
+- explains causal mechanisms and important boundaries;
+- prefers small, reversible tests before irreversible commitments;
+- ends with a first action, progress signal, review cadence, and stop condition.
 
-将仓库克隆到 Codex Skills 目录：
+## 45-second example
+
+![Decision-to-action demo](assets/demo.gif)
+
+**Prompt**
+
+> I have spent six months and $4,000 on a side project with no traction. Should I continue?
+
+**What the skill does**
+
+1. Ignores sunk cost when evaluating future investment.
+2. Identifies the unproven assumption that matters most.
+3. Designs a seven-day validation test with a fixed budget.
+4. Defines evidence for continuing, changing direction, or stopping.
+5. Gives the first action to complete today.
+
+## Best use cases
+
+| Situation | Example question | Result |
+|---|---|---|
+| Career decision | “Should I quit, change fields, or stay for another year?” | Options, downside limits, and a reversible career test |
+| Sunk-cost review | “I have invested too much to stop. What should I do?” | Forward-looking criteria and explicit exit conditions |
+| Habit design | “How can I build a study habit I can actually maintain?” | A small behavior loop with friction control and review metrics |
+| Difficult conversation | “How do I raise this issue without damaging the relationship?” | Conversation structure, boundaries, and fallback responses |
+| Multi-option choice | “How should I compare these three cities or offers?” | Weighted criteria, uncertainty checks, and a decision deadline |
+
+See [10 realistic prompts and sample response shapes](examples/README.md).
+
+## Install
+
+### Skills CLI
+
+```bash
+npx skills add wangjunyu86/cross-disciplinary-life-advisor -g -y
+```
+
+### Codex — manual installation
 
 ```bash
 git clone https://github.com/wangjunyu86/cross-disciplinary-life-advisor.git \
   ~/.codex/skills/cross-disciplinary-life-advisor
 ```
 
-重新启动或刷新 Codex 后即可自动发现该 Skill。
+Restart or refresh Codex after a manual installation.
 
-## 使用方式
+## Use
 
-直接描述现实问题即可，例如：
+Describe the real situation, including constraints that would change the recommendation.
 
-- “我是否应该换工作？”
-- “这个项目已经投入半年，还要不要继续？”
-- “帮我设计一个能够坚持的学习计划。”
-- “我有三个选择，怎样判断哪个更适合我？”
+```text
+Use $cross-disciplinary-life-advisor to compare my three job options.
+My priorities are stable income, time with family, and long-term learning.
+Give me a low-risk way to test the uncertain parts before I decide.
+```
 
-Skill 默认按照以下结构回答：
+The default response contains:
 
-1. 问题定义
-2. 采用的模型
-3. 行动方案
-4. 指标与复盘
-5. 停止或调整条件
+1. **Problem definition**
+2. **Selected models** — relevance, implication, and boundary
+3. **Action plan** — ordered and small enough to begin today
+4. **Metrics and review cadence**
+5. **Stop or adjustment conditions**
 
-## 文件结构
+## How it differs from generic advice
+
+This is not a collection of motivational quotes or a prompt that decorates answers with model names. The skill contains a routed reference library and reusable action playbooks. It requires each selected model to change the decision, disclose its boundary, and produce an observable action or test.
+
+## Quality and evaluation
+
+The repository includes a lightweight evaluation set covering career, money, habits, relationships, learning, and uncertain projects. A good response should be actionable without becoming overconfident or pretending to replace professional medical, legal, or financial advice.
+
+- [Evaluation cases and rubric](evals/README.md)
+- [Changelog](CHANGELOG.md)
+- [Roadmap](ROADMAP.md)
+
+## Repository structure
 
 ```text
 ├── SKILL.md
-├── agents/
-│   └── openai.yaml
-└── references/
-    ├── model-index.md
-    ├── action-playbooks.md
-    ├── systems-and-complexity.md
-    ├── cognition-and-social.md
-    ├── uncertainty-and-economy.md
-    ├── philosophy-finance-body.md
-    └── integration.md
+├── agents/openai.yaml
+├── references/           # routed model library and action playbooks
+├── examples/             # realistic prompts and expected response shapes
+├── evals/                # behavioral evaluation cases and rubric
+└── assets/               # repository preview and demo
 ```
 
-## 内容说明
+## Safety boundaries
 
-仓库内容是面向实际决策的原创操作化整理，不是任何课程、书籍或讲师内容的逐字转载。投资、医疗和法律相关内容仅用于一般决策支持，不能替代持证专业人士的个性化建议。
+This skill supports thinking and planning. It does not provide diagnosis or individualized regulated advice. For high-stakes medical, legal, investment, or safety decisions, it should state material uncertainty and recommend qualified help where appropriate.
 
-## 开源许可
+## Contributing
 
-本项目采用 [MIT License](LICENSE)，可以免费使用、修改和分发。
+Issues and pull requests are welcome. If you report a weak answer, include the original prompt, the problematic behavior, and what a better decision process should have done. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+[MIT](LICENSE) — free to use, modify, and distribute.
